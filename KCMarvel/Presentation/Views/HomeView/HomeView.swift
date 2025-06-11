@@ -39,6 +39,7 @@ struct HomeView: View {
                             .animation(.linear(duration: 2).repeatForever(),value: animateLoading)
                     
                             .onAppear{
+                                //TODO: - He probado a cargar los heroes desde aquí, aprovechando los tres segundos de espera para asi mejorar la experiencia de usuario llegando a la siguiente View con los heroes cargados ya que cargan con lag pero no ha servido y por eso lo he quitado y me ha dejado algo confuso de cual seria la mejor solucion para el problema.
                                 animateLoading = true
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                     navegationNextView = true

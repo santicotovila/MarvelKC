@@ -1,6 +1,9 @@
 import Foundation
 
-//TODO: - Revisar
+
 struct Series: Codable{
-    let name: String
+    let id: Int
+    let thumbnail: Thumbnail
+    let title: String
+    let description: String?
 }

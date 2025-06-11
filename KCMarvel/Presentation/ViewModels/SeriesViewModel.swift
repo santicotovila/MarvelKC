@@ -24,7 +24,7 @@ final class SeriesViewModel {
         let dataHero = await useCase.getSeriesForHero(filter: filter)
         self.seriesHero = dataHero
         
-        
+    
     }
     
     

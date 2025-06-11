@@ -1,9 +1,3 @@
-//
-//  SeriesRowView.swift
-//  KCMarvel
-//
-//  Created by Santiago Coto Vila on 11/06/2025.
-//
 
 import SwiftUI
 

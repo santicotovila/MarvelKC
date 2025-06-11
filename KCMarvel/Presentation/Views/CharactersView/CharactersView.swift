@@ -6,6 +6,7 @@ struct CharactersView: View {
   
     @State var viewModel: CharactersViewModel
     @State var searchhero: String = ""
+    //TODO: - Revisar
     
     var body: some View {
         NavigationStack{

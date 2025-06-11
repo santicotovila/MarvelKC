@@ -41,7 +41,8 @@ final class NetworkMarvel: NetworkMarvelProtocol {
         let url: String = "\(ConstantsApp.URL_API)\(EndPoints.series.rawValue)"
         var components = URLComponents(string: url)
         components?.queryItems = SecurityAccess().AuthorizationAccess()
-        var request = URLRequest(url:URL(string: url)!)
+        guard let fullURL = components?.url else { return [] }
+        var request = URLRequest(url:fullURL)
         request.httpMethod = HttpMethods.GET.rawValue
         
         do {
@@ -65,7 +66,7 @@ final class NetworkMarvel: NetworkMarvelProtocol {
 }
 
 
-
+//TODO: - Revisar
 final class NetworkMarvelMock: NetworkMarvelProtocol {
     func getCharacters() async -> [Hero] {
         let Thumbnail1 = Thumbnail(path: "https://www.salvat.com/img/cms/MARVEL%20MUGS/bodegon-marvel633x608", extension: ".png")
