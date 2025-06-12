@@ -12,14 +12,41 @@ struct SeriesRowView: View {
                 ZStack {
                     image
                         .resizable()
-                        .frame(width: 370,height: 200)
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
+                        .opacity(0.7)
+                        .aspectRatio(contentMode: .fill)
                     
+                    Image(decorative: "")
+                        .resizable()
+                        .background(Color.black.opacity(0.6))
+                    
+                    VStack(alignment: .leading) {
+                        Text("\(series.title)")
+                            .font(.system(size: 22))
+                            .shadow(radius: 10)
+                            .foregroundStyle(.white)
+                            .bold()
+                            .padding(.horizontal,16)
+                            .padding()
+                        
+                        if let description = series.description {
+                            Text("\(description)")
+                                .font(.system(size: 16))
+                                .foregroundStyle(.white)
+                                .bold()
+                        }
+                        
+                        
+                    }
                 }
+                
             }
-                Text("\(series.title)")
+                
             
         }
+   
     }
+}
+
+#Preview {
+    SeriesRowView(series: Series(id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/00/51644d6b47668", extension: "jpg"),title: "Titleeeeee",description: "description"))
 }

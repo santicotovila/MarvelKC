@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    var charactersVM = CharactersViewModel()
     @State private var animateLoading = false
     @State private var navegationNextView = false
     
@@ -16,7 +16,7 @@ struct HomeView: View {
                     .ignoresSafeArea()
                     .opacity(0.7)
                 
-                Image(decorative:"") //FIXME: - Realmente en clase enseñaste esta manera para darle oscurecer un poco el background pero el problema es que al añadir el decorative con "" me genera warnings porque no me encuentra la imagen y no se si habria alguna alternativa para evitarlos sin tener que buscar y añador una imagen negra al asserts
+                Image(decorative: "") //FIXME: - Realmente en clase enseñaste esta manera para darle oscurecer un poco el background pero el problema es que al añadir el decorative con "" me genera warnings porque no me encuentra la imagen y no se si habría alguna alternativa mejor.
                     .resizable()
                     .background(.black.opacity(0.7))
                 
@@ -39,30 +39,35 @@ struct HomeView: View {
                             .animation(.linear(duration: 2).repeatForever(),value: animateLoading)
                     
                             .onAppear{
-                                //TODO: - He probado a cargar los heroes desde aquí, aprovechando los tres segundos de espera para asi mejorar la experiencia de usuario llegando a la siguiente View con los heroes cargados ya que cargan con lag pero no ha servido y por eso lo he quitado y me ha dejado algo confuso de cual seria la mejor solucion para el problema.
-                                animateLoading = true
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                    navegationNextView = true
+                                //FIXME: - He probado a cargar los heroes desde aquí, aprovechando los tres segundos de espera para asi mejorar la experiencia de usuario llegando a la siguiente View con los heroes cargados ya que cargan con lag pero no ha servido y por eso lo he quitado y me ha dejado algo confuso de cual sería la mejor solución para el problema.
+                                
+                               /* Task {
+                                    await charactersVM.getCharacters()
+                                }*/
+                                    
+                                    animateLoading = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        navegationNextView = true
+                                    }
+                                }
                                 }
                                 
                             }
                             .navigationDestination(isPresented: $navegationNextView) {
-                                CharactersView(viewModel: CharactersViewModel())
+                                CharactersView(viewModel:charactersVM)
                             }
                             
 
                     }
                     
-                }//Vstack
+                }
                                 
             }
 
             
-        }//navigationStack
+        }
         
-    }
-}
-#Preview {
-    HomeView()
-}
+    
+
+
 
