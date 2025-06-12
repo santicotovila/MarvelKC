@@ -7,9 +7,9 @@ final class SeriesViewModel {
     var hero: Hero
     
     @ObservationIgnored
-    private let useCase: SeriesForheroUseCase
+    private let useCase: SeriesUseCaseProtocol
     
-    init(useCase: SeriesForheroUseCase,hero:Hero) {
+    init(useCase: SeriesUseCaseProtocol,hero:Hero) {
         self.useCase = useCase
         self.hero = hero
         

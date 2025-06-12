@@ -1,9 +1,3 @@
-//
-//  KCMarvelUITestsLaunchTests.swift
-//  KCMarvelUITests
-//
-//  Created by Santiago Coto Vila on 02/06/2025.
-//
 
 import XCTest
 

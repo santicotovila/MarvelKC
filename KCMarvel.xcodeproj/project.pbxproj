@@ -23,6 +23,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2F37F6912DFB1FB900723A9F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2F1140492DEDB65B00AC1A38 /* KCMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1140572DEDB65C00AC1A38 /* KCMarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCMarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +128,7 @@
 				2F1140452DEDB65A00AC1A38 /* Sources */,
 				2F1140462DEDB65A00AC1A38 /* Frameworks */,
 				2F1140472DEDB65A00AC1A38 /* Resources */,
+				2F37F6912DFB1FB900723A9F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);

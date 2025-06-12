@@ -69,20 +69,26 @@ final class NetworkMarvel: NetworkMarvelProtocol {
 
 final class NetworkMarvelMock: NetworkMarvelProtocol {
     func getCharacters() async -> [Hero] {
-        let Thumbnail1 = Thumbnail(path: "https://www.salvat.com/img/cms/MARVEL%20MUGS/bodegon-marvel633x608", extension: ".png")
+        let Thumbnail1 = Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/00/51644d6b47668", extension: ".jpg")
         
-        let model1 = Hero(id: 1, name: "", description: "", thumbnail: Thumbnail1, resourceURI: "")
+        let model1 = Hero(id: 1, name: "Spider", description: "description", thumbnail: Thumbnail1, resourceURI: "")
         
-        let Thumbnail2 = Thumbnail(path: "https://www.salvat.com/img/cms/MARVEL%20MUGS/bodegon-marvel633x608", extension: ".png")
+        let Thumbnail2 = Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/00/51644d6b47668", extension: ".jpg")
         
-        let model2 = Hero(id: 1, name: "", description: "", thumbnail: Thumbnail2, resourceURI: "")
+        let model2 = Hero(id: 2, name: "ironMan", description: "description2", thumbnail: Thumbnail2, resourceURI: "")
         return [model1,model2]
         
     }
     
     //TODO: - Revisar
     func getSeriesForHero(id:Int) async -> [Series] {
-        return []
+        let Thumbnail1 = Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/00/51644d6b47668", extension: ".jpg")
+        let model1 = Series(id: 1, thumbnail: Thumbnail1, title: "titleHero", description: "description")
+        
+        let Thumbnail2 = Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/00/51644d6b47668", extension: ".jpg")
+        let model2 = Series(id: 2, thumbnail: Thumbnail2, title: "titleHero2", description: "description2")
+        
+        return [model1,model2]
     }
     
 }
