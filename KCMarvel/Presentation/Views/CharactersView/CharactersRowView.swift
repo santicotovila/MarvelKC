@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+///Creating this structure for everything that each section of the hero entails, we check during image unpacking that what we receive is actually a valid image and we customize it, accompanied by its respective name.
 struct CharacterRow: View {
     let hero: Hero
     var body: some View {
@@ -16,13 +17,13 @@ struct CharacterRow: View {
                     Image(decorative: "")
                         .resizable()
                         .frame(width: 380, height: 250)
-                        .background(Color.black.opacity(0.3))
+                        .background(Color.black.opacity(0.5))
                         .clipShape(RoundedRectangle(cornerRadius: 7))
                         
                     
                     VStack {
                         Text("\(hero.name)")
-                            .font(.title)
+                            .font(.system(size: 26))
                             .foregroundStyle(.white)
                             .bold()
                             .padding()

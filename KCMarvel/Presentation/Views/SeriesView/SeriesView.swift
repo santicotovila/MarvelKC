@@ -1,8 +1,8 @@
 import SwiftUI
-
+///Creating the View to pass the custom row with its respective id and we execute the method to obtain the series when the view is going to appear
 struct SeriesView: View {
     
-    @State  var viewModel: SeriesViewModel
+     var viewModel: SeriesViewModel
     
     
     var body: some View {

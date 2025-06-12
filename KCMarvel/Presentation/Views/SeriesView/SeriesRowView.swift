@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+///Here we manage the row of each series, personalized to maintain independent customization.
 struct SeriesRowView: View {
     
      

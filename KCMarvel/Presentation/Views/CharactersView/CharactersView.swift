@@ -1,12 +1,11 @@
 import Foundation
 import SwiftUI
 
+///We receive the hero with its respective ID and access SeriesView with its value, representing the cells as we have configured in CharacterRow.
+
 struct CharactersView: View {
     
-  
-    @State var viewModel: CharactersViewModel
-    @State var searchhero: String = ""
-    //TODO: - Revisar
+      var viewModel: CharactersViewModel
     
     var body: some View {
         NavigationStack{
@@ -21,7 +20,8 @@ struct CharactersView: View {
                         }
                     }
                 }
-            }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(true)///We hide the possibility of returning so that the user cannot go back to the Home page
+            
         }
     }
 }

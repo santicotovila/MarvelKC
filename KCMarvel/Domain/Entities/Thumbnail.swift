@@ -1,12 +1,12 @@
 import Foundation
 
-///Support images Marvel
+///Support to receive the Marvel images since the JSON comes with the path and its separate format
 
 struct Thumbnail: Codable {
     var path: String
     var `extension`: String
     
-    //He creado una variable computada porque estaba teniendo problemas para obtener la url de la imagen y lo mas sencillo me parecío juntar el path y extension y pasarlo a String para trabajar mas comodo.
+    ///I created a computed variable because I was having trouble getting the image URL and the easiest thing to do seemed to me to combine the path and extension and convert it to String to work more comfortably.
     var fullURL:String {
         return "\(path).\(`extension`)"
     }

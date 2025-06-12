@@ -1,7 +1,7 @@
 import Foundation
 
 
-//Lo he hecho generico para poder usar tanto para heroes como para las series.
+///Structure required for data decoding, I have worked with generics to be able to recycle the code for both characters and series
 
 struct ResponseMarvel<T: Codable>: Codable {
     let data: DataMarvel<T>
