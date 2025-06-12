@@ -4,25 +4,26 @@ import Foundation
 final class SeriesViewModel {
     
     var seriesHero = [Series]()
-    
+    var hero: Hero
     
     @ObservationIgnored
     private let useCase: SeriesForheroUseCase
     
-    init(useCase: SeriesForheroUseCase) {
+    init(useCase: SeriesForheroUseCase,hero:Hero) {
         self.useCase = useCase
+        self.hero = hero
         
-        Task {
+       Task {
             
-            await getSeriesForHero()
+           await getSeriesForHero(id: hero.id)
         }
         
     }
     
     @MainActor
-    func getSeriesForHero(filter: Int = 0) async {
+    func getSeriesForHero(id: Int) async {
         
-        let dataHero = await useCase.getSeriesForHero(filter: filter)
+        let dataHero = await useCase.getSeriesForHero(id: id)
         self.seriesHero = dataHero
         
     

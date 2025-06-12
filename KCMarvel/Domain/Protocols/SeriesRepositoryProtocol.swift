@@ -1,5 +1,5 @@
 import Foundation
 
 protocol SeriesRepositoryProtocol {
-    func getSeriesForHero(filter:Int) async -> [Series]
+    func getSeriesForHero(id:Int) async -> [Series]
 }

@@ -2,7 +2,7 @@ import Foundation
 
 protocol NetworkMarvelProtocol {
     func getCharacters () async -> [Hero]
-    func getSeriesForHero () async -> [Series]
+    func getSeriesForHero (id:Int) async -> [Series]
 }
 
 
@@ -10,7 +10,7 @@ protocol NetworkMarvelProtocol {
 final class NetworkMarvel: NetworkMarvelProtocol {
     
     func getCharacters() async -> [Hero] {
-        let url: String = "\(ConstantsApp.URL_API)\(EndPoints.characters.rawValue)"
+        let url: String = "\(ConstantsApp.URL_API)\(EndPoints.characters)"
         var components = URLComponents(string: url)
         components?.queryItems = SecurityAccess().AuthorizationAccess()
         guard let fullUrl = components?.url else { return [] }
@@ -37,8 +37,8 @@ final class NetworkMarvel: NetworkMarvelProtocol {
         
     }
     
-    func getSeriesForHero() async -> [Series] {
-        let url: String = "\(ConstantsApp.URL_API)\(EndPoints.series.rawValue)"
+    func getSeriesForHero(id: Int) async -> [Series] {
+        let url: String = "\(ConstantsApp.URL_API)\(EndPoints.seriesForHero(id: id))"
         var components = URLComponents(string: url)
         components?.queryItems = SecurityAccess().AuthorizationAccess()
         guard let fullURL = components?.url else { return [] }
@@ -80,7 +80,7 @@ final class NetworkMarvelMock: NetworkMarvelProtocol {
         
     }
     
-    func getSeriesForHero() async -> [Series] {
+    func getSeriesForHero(id:Int) async -> [Series] {
         return []
     }
     

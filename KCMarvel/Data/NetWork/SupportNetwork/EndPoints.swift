@@ -1,6 +1,9 @@
 import Foundation
 
-enum EndPoints: String {
-    case characters = "/v1/public/characters"
-    case series = "/v1/public/series"
+struct EndPoints {
+    static let characters = "/v1/public/characters"
+    static func seriesForHero(id: Int) -> String {
+        return "/v1/public/characters/\(id)/series"
+    }
+   
 }

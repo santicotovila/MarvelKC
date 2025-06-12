@@ -2,7 +2,7 @@ import Foundation
 
 protocol SeriesUseCaseProtocol {
     var repo: SeriesRepositoryProtocol { get set }
-    func getSeriesForHero(filter: Int) async -> [Series]
+    func getSeriesForHero(id: Int) async -> [Series]
 }
 
 
@@ -15,8 +15,8 @@ final class SeriesForheroUseCase: SeriesUseCaseProtocol {
         self.repo = repo
     }
     
-    func getSeriesForHero(filter: Int) async -> [Series] {
-        await repo.getSeriesForHero(filter: filter)
+    func getSeriesForHero(id: Int) async -> [Series] {
+        await repo.getSeriesForHero(id: id)
     }
     
    
@@ -31,8 +31,8 @@ final class SeriesForheroUseCaseMock: SeriesUseCaseProtocol {
         self.repo = repo
     }
     
-    func getSeriesForHero(filter: Int) async -> [Series] {
-        await repo.getSeriesForHero(filter: filter)
+    func getSeriesForHero(id: Int) async -> [Series] {
+        await repo.getSeriesForHero(id: id)
     }
     
    

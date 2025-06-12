@@ -8,8 +8,8 @@ final class SeriesForHeroRepository:SeriesRepositoryProtocol {
         self.network = network
     }
     
-    func getSeriesForHero(filter: Int) async -> [Series] {
-        await network.getSeriesForHero()
+    func getSeriesForHero(id: Int) async -> [Series] {
+        await network.getSeriesForHero(id: id)
     }
     
     
@@ -23,8 +23,8 @@ final class SeriesForHeroRepositoryMock:SeriesRepositoryProtocol {
         self.network = network
     }
     
-    func getSeriesForHero(filter: Int) async -> [Series] {
-        await network.getSeriesForHero()
+    func getSeriesForHero(id: Int) async -> [Series] {
+        await network.getSeriesForHero(id: id)
     }
     
     

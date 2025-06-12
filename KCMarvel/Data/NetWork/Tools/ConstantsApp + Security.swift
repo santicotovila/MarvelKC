@@ -8,6 +8,7 @@ struct ConstantsApp {
     static let URL_API = "https://gateway.marvel.com"
     static let PUBLICKEY = "3894dffe2cd29353d59a06b4ed76d02f"
     static let PRIVATEKEY = "0ddcbdf9b2fe931474b0b3500831b9a35c9ccabb"
+    
 }
 
 

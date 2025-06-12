@@ -16,7 +16,7 @@ struct CharactersView: View {
                     //TODO: - Revisar
                     ForEach(viewModel.heros, id: \.id) { hero in
                         NavigationLink {
-                            SeriesView(viewModel:SeriesViewModel(useCase: SeriesForheroUseCase()),hero: hero)
+                            SeriesView(viewModel: SeriesViewModel(useCase: SeriesForheroUseCase(), hero: hero))
                         } label: {
                             CharacterRow(hero: hero)
                         }
