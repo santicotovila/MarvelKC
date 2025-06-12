@@ -14,6 +14,7 @@ struct SeriesRowView: View {
                         .resizable()
                         .opacity(0.7)
                         .aspectRatio(contentMode: .fill)
+                        
                     
                     Image(decorative: "")
                         .resizable()
@@ -25,7 +26,6 @@ struct SeriesRowView: View {
                             .shadow(radius: 10)
                             .foregroundStyle(.white)
                             .bold()
-                            .padding(.horizontal,16)
                             .padding()
                         
                         if let description = series.description {
@@ -33,11 +33,13 @@ struct SeriesRowView: View {
                                 .font(.system(size: 16))
                                 .foregroundStyle(.white)
                                 .bold()
+                                .padding(.horizontal)
                         }
                         
                         
                     }
                 }
+                
                 
             }
                 

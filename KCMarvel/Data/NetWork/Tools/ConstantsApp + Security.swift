@@ -16,7 +16,7 @@ struct ConstantsApp {
 struct SecurityAccess {
     
     func AuthorizationAccess() -> [URLQueryItem] {
-        let ts = "\(Date().timeIntervalSince1970)" /// Generamos un ts distinto para dar mayor seguridad en cda llamada
+        let ts = "\(Date().timeIntervalSince1970)" 
         let hash = (ts + ConstantsApp.PRIVATEKEY + ConstantsApp.PUBLICKEY).md5
         return [
             URLQueryItem(name: "ts",value: ts),

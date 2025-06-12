@@ -66,7 +66,7 @@ final class NetworkMarvel: NetworkMarvelProtocol {
 }
 
 
-//TODO: - Revisar
+
 final class NetworkMarvelMock: NetworkMarvelProtocol {
     func getCharacters() async -> [Hero] {
         let Thumbnail1 = Thumbnail(path: "https://www.salvat.com/img/cms/MARVEL%20MUGS/bodegon-marvel633x608", extension: ".png")
@@ -80,6 +80,7 @@ final class NetworkMarvelMock: NetworkMarvelProtocol {
         
     }
     
+    //TODO: - Revisar
     func getSeriesForHero(id:Int) async -> [Series] {
         return []
     }
