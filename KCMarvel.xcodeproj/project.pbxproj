@@ -40,7 +40,6 @@
 		2F1140492DEDB65B00AC1A38 /* KCMarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCMarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1140572DEDB65C00AC1A38 /* KCMarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCMarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1140612DEDB65C00AC1A38 /* KCMarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCMarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FC180E52DFB58EA00107A4C /* KCMarvel copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KCMarvel copy-Info.plist"; path = "/Users/santi/Desktop/MarvelKCSwiftUI/KCMarvel copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -70,11 +69,6 @@
 		2F1140642DEDB65C00AC1A38 /* KCMarvelUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = KCMarvelUITests;
-			sourceTree = "<group>";
-		};
-		2FC180EB2DFB596E00107A4C /* Watch App Watch App */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Watch App Watch App";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -110,8 +104,6 @@
 				2F11404B2DEDB65B00AC1A38 /* KCMarvel */,
 				2F11405A2DEDB65C00AC1A38 /* KCMarvelTests */,
 				2F1140642DEDB65C00AC1A38 /* KCMarvelUITests */,
-				2FC180E52DFB58EA00107A4C /* KCMarvel copy-Info.plist */,
-				2FC180EB2DFB596E00107A4C /* Watch App Watch App */,
 				2F11404A2DEDB65B00AC1A38 /* Products */,
 			);
 			sourceTree = "<group>";
