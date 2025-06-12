@@ -13,9 +13,10 @@ struct CharactersView: View {
             
             ScrollView{
                 VStack{
+                    //TODO: - Revisar
                     ForEach(viewModel.heros, id: \.id) { hero in
                         NavigationLink {
-                            SeriesView(hero: hero)
+                            SeriesView(viewModel:SeriesViewModel(useCase: SeriesForheroUseCase()),hero: hero)
                         } label: {
                             CharacterRow(hero: hero)
                         }

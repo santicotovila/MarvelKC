@@ -1,7 +1,7 @@
 import Foundation
 
 
-struct Series: Codable{
+struct Series: Codable {
     let id: Int
     let thumbnail: Thumbnail
     let title: String

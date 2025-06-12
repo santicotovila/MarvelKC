@@ -13,13 +13,14 @@ final class SeriesViewModel {
         self.useCase = useCase
         
         Task {
+            
             await getSeriesForHero()
         }
         
     }
     
     @MainActor
-    func getSeriesForHero(filter: String = "") async {
+    func getSeriesForHero(filter: Int = 0) async {
         
         let dataHero = await useCase.getSeriesForHero(filter: filter)
         self.seriesHero = dataHero
@@ -30,4 +31,3 @@ final class SeriesViewModel {
     
     
 }
-

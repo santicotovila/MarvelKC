@@ -1,11 +1,24 @@
 import SwiftUI
 
 struct SeriesView: View {
-    let hero: Hero
+    
+    var viewModel: SeriesViewModel
+    var hero: Hero
     
     var body: some View {
-        VStack{
-            SeriesRowView()
+        
+        ScrollView {
+            VStack {
+                
+                ForEach(viewModel.seriesHero,id: \.id) {serie in
+                    SeriesRowView(series: serie)
+                }
+            }
+            .onAppear {
+                Task{
+                    await viewModel.getSeriesForHero(filter: hero.id)
+                }
+            }
         }
     }
 }
