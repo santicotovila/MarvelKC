@@ -8,7 +8,7 @@ struct SeriesRowView: View {
     
     var body: some View {
         
-        ZStack(alignment: .bottomLeading) {
+        ZStack {
             
             AsyncImage(url: URL(string: series.thumbnail.fullURL)) { img in
                 if let image = img.image {
@@ -32,10 +32,13 @@ struct SeriesRowView: View {
                     .foregroundColor(.white)
                     .shadow(radius: 3)
                 
-                if let description = series.description { ///We unpack because it is optional since not all of them have a description
+                ScrollView {
+                    if let description = series.description { ///We unpack because it is optional since not all of them have a description
                     Text(description)
                         .font(.system(size: 16))
                         .foregroundColor(.white)
+                        .frame(height: 200)
+                }
                 }
             }
             .padding()

@@ -15,7 +15,14 @@
       }
     },
     "No series found" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han encontrado series"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
