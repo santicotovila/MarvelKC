@@ -4,32 +4,36 @@ import SwiftUI
 ///Creating this structure for everything that each section of the hero entails, we check during image unpacking that what we receive is actually a valid image and we customize it, accompanied by its respective name.
 struct CharacterRow: View {
     let hero: Hero
+    
     var body: some View {
         AsyncImage(url: URL(string:hero.thumbnail.fullURL)) { image in
             if let img = image.image {
                 ZStack(alignment: .bottomLeading) {
                     img
                     .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: 380, height: 250)
-                    .aspectRatio(contentMode: .fit)
+                    .clipped()
                     .clipShape(RoundedRectangle(cornerRadius: 7))
                     
                     Image(decorative: "")
                         .resizable()
-                        .frame(width: 380, height: 250)
                         .background(Color.black.opacity(0.5))
+                        .frame(height: 60)
                         .clipShape(RoundedRectangle(cornerRadius: 7))
-                        
-                    
-                    VStack {
-                        Text("\(hero.name)")
-                            .font(.system(size: 26))
-                            .foregroundStyle(.white)
-                            .bold()
-                            .padding()
-                        
-                    }
+                      
+                    Text("\(hero.name)")
+                        .font(.system(size: 24,weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding()
                 }
+                .frame(width: 380, height: 250)
+            }
+            
+            ///In case the images are not loaded yet, we present a ProgressView to give feedback to the user.
+            else {
+                ProgressView()
+                    .frame(width: 380,height: 250)
             }
         }
     }

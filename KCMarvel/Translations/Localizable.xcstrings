@@ -13,6 +13,9 @@
           }
         }
       }
+    },
+    "No series found" : {
+
     }
   },
   "version" : "1.0"

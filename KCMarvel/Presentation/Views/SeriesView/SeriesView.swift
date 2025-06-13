@@ -1,8 +1,8 @@
 import SwiftUI
-///Creating the View to pass the custom row with its respective id and we execute the method to obtain the series when the view is going to appear
+///We create the View to pass the custom row with its respective id and if we do not have series we give feedback to the user
 struct SeriesView: View {
     
-     var viewModel: SeriesViewModel
+    var viewModel: SeriesViewModel
     
     
     var body: some View {
@@ -10,16 +10,18 @@ struct SeriesView: View {
         ScrollView {
             VStack {
                 
-                ForEach(viewModel.seriesHero,id:\.id) {serie in
-                    SeriesRowView(series: serie)
+                if viewModel.seriesHero.isEmpty {
+                    Text("No series found")
+                }
+                else {
+                    ForEach(viewModel.seriesHero,id:\.id) {serie in
+                        SeriesRowView(series: serie)
+                    }
                 }
             }
-            .onAppear {
-                Task{
-                    await viewModel.getSeriesForHero(id:viewModel.hero.id)
-                }
-            }
+            
         }
     }
 }
+
 

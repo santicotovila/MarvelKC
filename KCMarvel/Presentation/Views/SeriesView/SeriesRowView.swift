@@ -1,55 +1,53 @@
 
 import SwiftUI
 
-///Here we manage the row of each series, personalized to maintain independent customization.
+///Here we manage the row of each series, keeping the customization independent from the general view.
+
 struct SeriesRowView: View {
-    
-     
     let series: Series
     
     var body: some View {
-        AsyncImage(url:URL(string:series.thumbnail.fullURL)) { img in
-            if let image = img.image {
-                ZStack {
+        
+        ZStack(alignment: .bottomLeading) {
+            
+            AsyncImage(url: URL(string: series.thumbnail.fullURL)) { img in
+                if let image = img.image {
                     image
                         .resizable()
-                        .opacity(0.7)
                         .aspectRatio(contentMode: .fill)
-                        
+                        .frame(height: 300)
+                        .clipped()
                     
-                    Image(decorative: "")
-                        .resizable()
-                        .background(Color.black.opacity(0.6))
-                    
-                    VStack(alignment: .leading) {
-                        Text("\(series.title)")
-                            .font(.system(size: 22))
-                            .shadow(radius: 10)
-                            .foregroundStyle(.white)
-                            .bold()
-                            .padding()
-                        
-                        if let description = series.description {
-                            Text("\(description)")
-                                .font(.system(size: 16))
-                                .foregroundStyle(.white)
-                                .bold()
-                                .padding(.horizontal)
-                        }
-                        
-                        
-                    }
                 }
-                
-                
             }
-                
             
+            Image(decorative: "")
+                .resizable()
+                .background(Color.black.opacity(0.6))
+                .frame(height: 300)
+            
+            VStack(alignment: .leading) {
+                Text(series.title)
+                    .font(.system(size: 22, weight: .bold))
+                    .foregroundColor(.white)
+                    .shadow(radius: 3)
+                
+                if let description = series.description { ///We unpack because it is optional since not all of them have a description
+                    Text(description)
+                        .font(.system(size: 16))
+                        .foregroundColor(.white)
+                }
+            }
+            .padding()
         }
-   
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.horizontal)
+        
     }
+    
 }
 
 #Preview {
     SeriesRowView(series: Series(id: 1, thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/00/51644d6b47668", extension: "jpg"),title: "Titleeeeee",description: "description"))
 }
+
