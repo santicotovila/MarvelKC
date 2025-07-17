@@ -17,10 +17,10 @@ struct HomeView: View {
                     .ignoresSafeArea()
                     .opacity(0.7)
                 
-                Image(decorative: "") //FIXME: - Enseñaste esta manera para darle una capa oscura pero el problema es que al añadir el decorative con "" me genera warnings porque no me encuentra la imagen y no se si habría alguna alternativa mejor.
-                    .resizable()
-                    .background(.black.opacity(0.7))
-                
+                Rectangle()
+                    .fill(Color.black.opacity(0.7))
+                    .ignoresSafeArea()
+
                 
                 VStack {
                     Text("Loading...")
@@ -40,12 +40,7 @@ struct HomeView: View {
                             .animation(.linear(duration: 2).repeatForever(),value: animateLoading)
                     
                             .onAppear{
-                                //FIXME: - He probado a cargar los heroes desde aquí, aprovechando los tres segundos de espera para así mejorar la experiencia de usuario llegando a la siguiente View con los heroes cargados ya que cargan con un poco de lag pero no ha servido y por eso lo he quitado y me ha dejado algo confuso preguntandome cual sería la mejor solución para el problema.
-                                
-                               /* Task {
-                                    await charactersVM.getCharacters()
-                                }*/
-                                    
+                               
                                     animateLoading = true
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                         navegationNextView = true
