@@ -2,13 +2,12 @@ import Foundation
 import CryptoKit
 
 
-//FIXME: - Como en clase has mencionado CryptoKit para darle seguridad y no dejar informacion valiosa de acceso libre en la app he optado por buscar algo de información sobre ello y he implementado CryptoKit para darle mayor seguridad al hash,gestionandolo directamente en la propia app y no dejandolo creado en el proyecto,supongo que aún asi no es seguridad suficiente ya que las claves(tanto privada como pública) quedan expuestas en el archivo,te agradezco si me  solucionas la duda de lo que debería implementar a más...😅
 
 ///The creation of this struct was to provide the different addresses necessary for network calls.
 struct ConstantsApp {
     static let URL_API = "https://gateway.marvel.com"
-    static let PUBLICKEY = "3894dffe2cd29353d59a06b4ed76d02f"
-    static let PRIVATEKEY = "0ddcbdf9b2fe931474b0b3500831b9a35c9ccabb"
+    static let PUBLICKEY = "489f263b000e9b7f742f36449b85e2ac"
+    static let PRIVATEKEY = "65c5efc78ce0704160a3c16523b78dc0e2d9dff7"
     
 }
 
